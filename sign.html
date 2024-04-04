@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sign in </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: outfit, sans-serif;
+    }
+    
+    header {
+      background-color: white;
+      color: #3c00a0;
+      padding: 10px 0;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      
+    }
+    
+    nav a {
+      color: black;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    nav a:hover {
+      color: #3c00a0;
+    }
+    
+    .logo {
+      color: #3c00a0;
+      font-size: 24px;
+      font-weight: bold;
+      margin-left:50;
+      margin-right:50;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 20px;
+    }
+    
+    .image-section {
+      padding: 0 10px;
+    }
+    
+    .blank-space {
+      background-color: blue;
+      height: 500px;
+    }
+    
+    footer {
+      background-color:white;
+      color: #3c00a0;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      .image-section, .blank-space {
+        grid-column: 1 / 2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Keyless vault</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Docx</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="image-section">
+      <img src="res-img.svg" alt="Sample Image" style="max-width: 100%;">
+    </div>
+    <div class="blank-space"></div>
+  </main>
+
+  <footer>
+    <p>Footer </p>
+  </footer>
+
+</body>
+</html>

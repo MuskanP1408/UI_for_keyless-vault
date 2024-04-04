@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyless Vaults</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #3c00a0;
+      margin: 15px 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .menu {
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+
+    .menu button {
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #3c00a0;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menu button:hover {
+      background-color: #5d3388;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 600px;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #3c00a0;
+      margin-bottom: 10px;
+      white-space: nowrap; /* Prevent line break */
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 12px 24px;
+      border-radius: 12px;
+      margin: 0;
+      border: none;
+      background-color: #3c00a0;
+      color: white;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5d3388;
+    }
+
+    .authn,
+    .authn_o {
+      text-align: center;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; /* Reduced spacing between divs */
+    }
+
+    .authn h1,
+    .authn_o h1 {
+      color: #3c00a0;
+      margin-bottom: 20px;
+      text-align: center; /* Centering the text */
+      width: 100%;
+    }
+
+    .authn > div,
+    .authn_o > div {
+      width: 100px; /* Reduced width */
+      height: 100px;
+      margin-left: 50px;
+      margin-right: 50px;
+      background-color: #3c00a0;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .authn > div:hover,
+    .authn_o > div:hover {
+      background-color: #5d3388;
+    }
+
+    .authn h3,
+    .authn_o h3 {
+      color: white;
+      margin: 0;
+      padding: 10px;
+      line-height: 1.5em;
+    }
+
+    .additional-content,
+    .additional-content-2,
+    .additional-content-3,
+    .additional-content-4,
+    .additional-content-5,
+    .additional-content-6 {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    .additional-content h1,
+    .additional-content-2 h1,
+    .additional-content-3 h1,
+    .additional-content-4 h1,
+    .additional-content-5 h1,
+    .additional-content-6 h1 {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .additional-content h3,
+    .additional-content-2 h3,
+    .additional-content-3 h3,
+    .additional-content-4 h3,
+    .additional-content-5 h3,
+    .additional-content-6 h3 {
+      font-size: 1.2rem;
+      color: #000;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .additional-content-5 img,
+    .additional-content-6 img {
+     max-width: 100%; /* Set the maximum width to 100% of the container */
+     height: auto; /* Maintain aspect ratio */
+}
+
+    @media (min-width: 768px) {
+      .menu {
+        margin-top: 15px;
+      }
+
+      .container {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 40px;
+      }
+
+      .container img {
+        order: 2;
+        width: auto;
+        max-width: 600px;
+      }
+
+      .hero-text {
+        order: 1;
+        width: 50%;
+        padding: 0 40px;
+        margin-top: 0;
+        text-align: left;
+      }
+
+      .buttons {
+        justify-content: flex-start;
+      }
+
+      .authn,
+      .authn_o {
+        flex-direction: row;
+        align-items: center; /* Centering the content */
+      }
+
+      .authn > div,
+      .authn_o > div {
+        width: 100%;
+      }
+
+      .authn > div:not(:last-child),
+      .authn_o > div:not(:last-child) {
+        margin-right: 10px; /* Reduced spacing between divs */
+      }
+
+      .authn > div:hover,
+      .authn_o > div:hover {
+        background-color: #5d3388;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <h1 class="logo">Keyless vault</h1>
+    <div class="menu">
+      <a href="sign.html" target="_blank">
+        <button>Sign In</button>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <img src="res-img.svg" alt="">
+      <div class="hero-text">
+        <h1><span style="color: black;">A</span> <span style="color: #3c00a0;">Passwordless</span><br><span style="color: black;">Password manager</span></h1>
+        <p>We Came Across to a password manager which doesn't require a password.</p>
+        <div class="buttons">
+          <button>Try Now</button>
+          <button>Read Docs</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <main>
+    <div class="authn">
+      <h1>Authentication are of three types</h1>
+      <div>
+        <h3>Something you may know, like a password.</h3>
+      </div>
+      <div>
+        <h3>Something you have, like a device</h3>
+      </div>
+      <div>
+        <h3>Something you are, like a fingerprint.</h3>
+      </div>
+    </div>
+  </main>
+  <main>
+    <div class="authn_o">
+      <h1>Advantages of Biometric Authentication</h1>
+      <div>
+        <h3>It is difficult to lose.</h3>
+      </div>
+      <div>
+        <h3>It is hard to steal.</h3>
+      </div>
+      <div>
+        <h3>It can't be shared.</h3>
+      </div>
+      <div>
+        <h3>You can't forget it.</h3>
+      </div>
+    </div>
+  </main>
+  <div class="additional-content">
+    <img src="logo.svg" alt="Logo" style="width: 100px; height: 100px; margin-bottom: 20px;">
+    <h1>Your fingerprint/face never leaves your device</h1>
+    <h3><p>Biometric verification uses the local authentication mechanism of your device. On the device,
+       these biometric information is strongly protected and never exposed.</p></h3>
+    <h3><p>Verification is a safety measure used to prove that you are you, and then to create or access cryptographic keys stored on your device. These keys,
+       also known as passkeys, are in turn used for the authentication mechanism.</p></h3>
+  </div>
+  <div class="additional-content-2">
+    <img src="logo1.svg" alt="Logo" style="width: 100px; height: 100px; margin-bottom: 20px;">
+    <h1>It protects you from phishing</h1>
+    <h3><p>Phishing usually involves tricking a user into entering their password into a fake website, or other 
+      approaches such as social engineering. It is the most common way of hacking accounts..</p></h3>
+    <h3><p>By getting rid of passwords, you get rid of phishing! Great, right?</p></h3>
+      <h3><p>As long as you don’t possess an allowed device, you will not be able to sign in.</p></h3>
+  </div>
+  <div class="additional-content-3">
+    <img src="logo2.svg" alt="Logo" style="width: 100px; height: 100px; margin-bottom: 20px;">
+    <h1>Multi-device and platform neutral</h1>
+    <h3><p>Authentication only works for allowed devices, but of course you can register another device simply by scanning a QR code or clicking on a link. Each device can then be used to authenticate directly using its own local 
+      authentication mechanism (for example TouchID on your phone, and PIN on your laptop).</p></h3>
+    <h3><p>Depending on the platform you use, your passkeys may also be automatically synced into the cloud by its built-in password manager, 
+      propagating to all devices of the same platform (Windows, Android or iOS).</p></h3>
+  </div>
+  <div class="additional-content-4">
+    <img src="logo3.svg" alt="Logo" style="width: 100px; height: 100px; margin-bottom: 20px;">
+    <h1>How does it work exactly?</h1>
+    <h3><p>The authentication relies on a recent browser protocol called WebAuthn, which is based on asymmetric cryptography.</p></h3>
+    <h3><p>Upon registration, a cryptographic key pair is generated for the user. The private key is stored on the device, 
+      protected by local authentication, while the public key is sent to the server.</p></h3>
+      <h3><p>When a user wants to authenticate themselves, they must sign a random “challenge” using their private key. 
+        This signature is sent to the server, which verifies it against the user’s public key.</p></h3>
+  </div>
+  <div class="additional-content-5">
+    <h1><span style="color: red;">Registration Flow is as follows</span> </h1>
+    <img src="WebAuthn_Registration_Flow.png">
+  </div>
+  <div class="additional-content-6">
+    <h1><span style="color: red;">Login Flow is as follows</span> </h1>
+    <img src="WebAuthn_Authentication_Flow.png">
+  </div>
+</body>
+</html>
